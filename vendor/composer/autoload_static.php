@@ -42,6 +42,7 @@ class ComposerStaticInit09f16200d2dfa61fec028824812a248f
             'Symfony\\Component\\VarExporter\\' => 30,
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\String\\' => 25,
+            'Symfony\\Component\\Stopwatch\\' => 28,
             'Symfony\\Component\\Runtime\\' => 26,
             'Symfony\\Component\\Routing\\' => 26,
             'Symfony\\Component\\HttpKernel\\' => 29,
@@ -55,9 +56,11 @@ class ComposerStaticInit09f16200d2dfa61fec028824812a248f
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\Config\\' => 25,
             'Symfony\\Component\\Cache\\' => 24,
+            'Symfony\\Bundle\\WebProfilerBundle\\' => 33,
             'Symfony\\Bundle\\TwigBundle\\' => 26,
             'Symfony\\Bundle\\FrameworkBundle\\' => 31,
             'Symfony\\Bridge\\Twig\\' => 20,
+            'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
         ),
         'P' => 
         array (
@@ -65,6 +68,11 @@ class ComposerStaticInit09f16200d2dfa61fec028824812a248f
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
+        ),
+        'D' => 
+        array (
+            'Doctrine\\Common\\Lexer\\' => 22,
+            'Doctrine\\Common\\Annotations\\' => 28,
         ),
         'A' => 
         array (
@@ -146,6 +154,10 @@ class ComposerStaticInit09f16200d2dfa61fec028824812a248f
         array (
             0 => __DIR__ . '/..' . '/symfony/string',
         ),
+        'Symfony\\Component\\Stopwatch\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/stopwatch',
+        ),
         'Symfony\\Component\\Runtime\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/runtime',
@@ -198,6 +210,10 @@ class ComposerStaticInit09f16200d2dfa61fec028824812a248f
         array (
             0 => __DIR__ . '/..' . '/symfony/cache',
         ),
+        'Symfony\\Bundle\\WebProfilerBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/web-profiler-bundle',
+        ),
         'Symfony\\Bundle\\TwigBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/twig-bundle',
@@ -209,6 +225,10 @@ class ComposerStaticInit09f16200d2dfa61fec028824812a248f
         'Symfony\\Bridge\\Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/twig-bridge',
+        ),
+        'Sensio\\Bundle\\FrameworkExtraBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src',
         ),
         'Psr\\Log\\' => 
         array (
@@ -226,6 +246,14 @@ class ComposerStaticInit09f16200d2dfa61fec028824812a248f
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
+        'Doctrine\\Common\\Lexer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
+        ),
+        'Doctrine\\Common\\Annotations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations',
+        ),
         'App\\Tests\\' => 
         array (
             0 => __DIR__ . '/../..' . '/tests',
@@ -239,8 +267,33 @@ class ComposerStaticInit09f16200d2dfa61fec028824812a248f
     public static $classMap = array (
         'App\\Controller\\DefaultController' => __DIR__ . '/../..' . '/src/Controller/DefaultController.php',
         'App\\Controller\\PostController' => __DIR__ . '/../..' . '/src/Controller/PostController.php',
+        'App\\Controller\\UserController' => __DIR__ . '/../..' . '/src/Controller/UserController.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'Doctrine\\Common\\Annotations\\Annotation' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation.php',
+        'Doctrine\\Common\\Annotations\\AnnotationException' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationException.php',
+        'Doctrine\\Common\\Annotations\\AnnotationReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationReader.php',
+        'Doctrine\\Common\\Annotations\\AnnotationRegistry' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationRegistry.php',
+        'Doctrine\\Common\\Annotations\\Annotation\\Attribute' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Attribute.php',
+        'Doctrine\\Common\\Annotations\\Annotation\\Attributes' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Attributes.php',
+        'Doctrine\\Common\\Annotations\\Annotation\\Enum' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Enum.php',
+        'Doctrine\\Common\\Annotations\\Annotation\\IgnoreAnnotation' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/IgnoreAnnotation.php',
+        'Doctrine\\Common\\Annotations\\Annotation\\NamedArgumentConstructor' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/NamedArgumentConstructor.php',
+        'Doctrine\\Common\\Annotations\\Annotation\\Required' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Required.php',
+        'Doctrine\\Common\\Annotations\\Annotation\\Target' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation/Target.php',
+        'Doctrine\\Common\\Annotations\\CachedReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/CachedReader.php',
+        'Doctrine\\Common\\Annotations\\DocLexer' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/DocLexer.php',
+        'Doctrine\\Common\\Annotations\\DocParser' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/DocParser.php',
+        'Doctrine\\Common\\Annotations\\FileCacheReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/FileCacheReader.php',
+        'Doctrine\\Common\\Annotations\\ImplicitlyIgnoredAnnotationNames' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/ImplicitlyIgnoredAnnotationNames.php',
+        'Doctrine\\Common\\Annotations\\IndexedReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/IndexedReader.php',
+        'Doctrine\\Common\\Annotations\\NamedArgumentConstructorAnnotation' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/NamedArgumentConstructorAnnotation.php',
+        'Doctrine\\Common\\Annotations\\PhpParser' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/PhpParser.php',
+        'Doctrine\\Common\\Annotations\\PsrCachedReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/PsrCachedReader.php',
+        'Doctrine\\Common\\Annotations\\Reader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Reader.php',
+        'Doctrine\\Common\\Annotations\\SimpleAnnotationReader' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/SimpleAnnotationReader.php',
+        'Doctrine\\Common\\Annotations\\TokenParser' => __DIR__ . '/..' . '/doctrine/annotations/lib/Doctrine/Common/Annotations/TokenParser.php',
+        'Doctrine\\Common\\Lexer\\AbstractLexer' => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer/AbstractLexer.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
         'Psr\\Cache\\CacheException' => __DIR__ . '/..' . '/psr/cache/src/CacheException.php',
@@ -265,6 +318,36 @@ class ComposerStaticInit09f16200d2dfa61fec028824812a248f
         'Psr\\Log\\Test\\LoggerInterfaceTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
         'Psr\\Log\\Test\\TestLogger' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/TestLogger.php',
         'ReturnTypeWillChange' => __DIR__ . '/..' . '/symfony/polyfill-php81/Resources/stubs/ReturnTypeWillChange.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Cache' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/Cache.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\ConfigurationAnnotation' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/ConfigurationAnnotation.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\ConfigurationInterface' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/ConfigurationInterface.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Entity' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/Entity.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\IsGranted' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/IsGranted.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Method' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/Method.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\ParamConverter' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/ParamConverter.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Route' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/Route.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Security' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/Security.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Template' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/Template.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\DependencyInjection\\Compiler\\AddExpressionLanguageProvidersPass' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/DependencyInjection/Compiler/AddExpressionLanguageProvidersPass.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\DependencyInjection\\Compiler\\AddParamConverterPass' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/DependencyInjection/Compiler/AddParamConverterPass.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\DependencyInjection\\Compiler\\OptimizerPass' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/DependencyInjection/Compiler/OptimizerPass.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/DependencyInjection/Configuration.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\DependencyInjection\\SensioFrameworkExtraExtension' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/DependencyInjection/SensioFrameworkExtraExtension.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\ControllerListener' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/EventListener/ControllerListener.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\HttpCacheListener' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/EventListener/HttpCacheListener.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\IsGrantedListener' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/EventListener/IsGrantedListener.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\ParamConverterListener' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/EventListener/ParamConverterListener.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\SecurityListener' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/EventListener/SecurityListener.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\TemplateListener' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/EventListener/TemplateListener.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ArgumentNameConverter' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Request/ArgumentNameConverter.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DateTimeParamConverter' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Request/ParamConverter/DateTimeParamConverter.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DoctrineParamConverter' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Request/ParamConverter/DoctrineParamConverter.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\ParamConverterInterface' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Request/ParamConverter/ParamConverterInterface.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\ParamConverterManager' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Request/ParamConverter/ParamConverterManager.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Routing\\AnnotatedRouteControllerLoader' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Routing/AnnotatedRouteControllerLoader.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Security\\ExpressionLanguage' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Security/ExpressionLanguage.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/SensioFrameworkExtraBundle.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Templating\\TemplateGuesser' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Templating/TemplateGuesser.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Bridge\\Twig\\AppVariable' => __DIR__ . '/..' . '/symfony/twig-bridge/AppVariable.php',
         'Symfony\\Bridge\\Twig\\Command\\DebugCommand' => __DIR__ . '/..' . '/symfony/twig-bridge/Command/DebugCommand.php',
@@ -416,6 +499,17 @@ class ComposerStaticInit09f16200d2dfa61fec028824812a248f
         'Symfony\\Bundle\\TwigBundle\\DependencyInjection\\TwigExtension' => __DIR__ . '/..' . '/symfony/twig-bundle/DependencyInjection/TwigExtension.php',
         'Symfony\\Bundle\\TwigBundle\\TemplateIterator' => __DIR__ . '/..' . '/symfony/twig-bundle/TemplateIterator.php',
         'Symfony\\Bundle\\TwigBundle\\TwigBundle' => __DIR__ . '/..' . '/symfony/twig-bundle/TwigBundle.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ExceptionPanelController' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Controller/ExceptionPanelController.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\Controller\\ProfilerController' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Controller/ProfilerController.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\Controller\\RouterController' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Controller/RouterController.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\Csp\\ContentSecurityPolicyHandler' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Csp/ContentSecurityPolicyHandler.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\Csp\\NonceGenerator' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Csp/NonceGenerator.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/DependencyInjection/Configuration.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\DependencyInjection\\WebProfilerExtension' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/DependencyInjection/WebProfilerExtension.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\EventListener\\WebDebugToolbarListener' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/EventListener/WebDebugToolbarListener.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\Profiler\\TemplateManager' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Profiler/TemplateManager.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/Twig/WebProfilerExtension.php',
+        'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle' => __DIR__ . '/..' . '/symfony/web-profiler-bundle/WebProfilerBundle.php',
         'Symfony\\Component\\Cache\\Adapter\\AbstractAdapter' => __DIR__ . '/..' . '/symfony/cache/Adapter/AbstractAdapter.php',
         'Symfony\\Component\\Cache\\Adapter\\AbstractTagAwareAdapter' => __DIR__ . '/..' . '/symfony/cache/Adapter/AbstractTagAwareAdapter.php',
         'Symfony\\Component\\Cache\\Adapter\\AdapterInterface' => __DIR__ . '/..' . '/symfony/cache/Adapter/AdapterInterface.php',
@@ -1220,6 +1314,10 @@ class ComposerStaticInit09f16200d2dfa61fec028824812a248f
         'Symfony\\Component\\Runtime\\Runner\\Symfony\\ResponseRunner' => __DIR__ . '/..' . '/symfony/runtime/Runner/Symfony/ResponseRunner.php',
         'Symfony\\Component\\Runtime\\RuntimeInterface' => __DIR__ . '/..' . '/symfony/runtime/RuntimeInterface.php',
         'Symfony\\Component\\Runtime\\SymfonyRuntime' => __DIR__ . '/..' . '/symfony/runtime/SymfonyRuntime.php',
+        'Symfony\\Component\\Stopwatch\\Section' => __DIR__ . '/..' . '/symfony/stopwatch/Section.php',
+        'Symfony\\Component\\Stopwatch\\Stopwatch' => __DIR__ . '/..' . '/symfony/stopwatch/Stopwatch.php',
+        'Symfony\\Component\\Stopwatch\\StopwatchEvent' => __DIR__ . '/..' . '/symfony/stopwatch/StopwatchEvent.php',
+        'Symfony\\Component\\Stopwatch\\StopwatchPeriod' => __DIR__ . '/..' . '/symfony/stopwatch/StopwatchPeriod.php',
         'Symfony\\Component\\String\\AbstractString' => __DIR__ . '/..' . '/symfony/string/AbstractString.php',
         'Symfony\\Component\\String\\AbstractUnicodeString' => __DIR__ . '/..' . '/symfony/string/AbstractUnicodeString.php',
         'Symfony\\Component\\String\\ByteString' => __DIR__ . '/..' . '/symfony/string/ByteString.php',
