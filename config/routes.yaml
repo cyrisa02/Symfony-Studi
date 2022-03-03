@@ -19,6 +19,16 @@ post_item2:
     path: /article/fonctionnement-des-applications-symfony2
     controller: App\Controller\PostController::item2
 
+user_list:
+    path: /utilisateurs
+    controller: App\Controller\UserController::list
+
+
+user_item:
+    path: /utilisateurs-{id}
+    controller: App\Controller\UserController::item
+
+
 
 
    

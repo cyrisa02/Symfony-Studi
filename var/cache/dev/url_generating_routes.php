@@ -4,4 +4,11 @@
 
 return [
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
+    'index' => [[], ['_controller' => 'App\\Controller\\DefaultController::index'], [], [['text', '/']], [], [], []],
+    'contact' => [[], ['_controller' => 'App\\Controller\\DefaultController::contact'], [], [['text', '/contact']], [], [], []],
+    'post_list' => [[], ['_controller' => 'App\\Controller\\PostController::list'], [], [['text', '/liste-des-articles']], [], [], []],
+    'post_item' => [[], ['_controller' => 'App\\Controller\\DefaultController::item'], [], [['text', '/article/fonctionnement-des-applications-symfony']], [], [], []],
+    'post_item2' => [[], ['_controller' => 'App\\Controller\\PostController::item2'], [], [['text', '/article/fonctionnement-des-applications-symfony2']], [], [], []],
+    'user_list' => [[], ['_controller' => 'App\\Controller\\UserController::list'], [], [['text', '/utilisateurs']], [], [], []],
+    'user_item' => [['id'], ['_controller' => 'App\\Controller\\UserController::item'], [], [['variable', '-', '[^/]++', 'id', true], ['text', '/utilisateurs']], [], [], []],
 ];
