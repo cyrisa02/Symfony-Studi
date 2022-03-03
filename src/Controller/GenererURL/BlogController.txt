@@ -1,0 +1,138 @@
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\GenererURL\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Post;
+
+Avec generateUrl pour app_blog_post
+
+
+/**
+ * @Route("/blog", requirements={"_locale" : "fr|en"})
+ */
+class BlogController extends AbstractController
+{
+    /**
+     * @Route(
+     *    "/posts/{id}",
+     *    methods={"POST", "PATCH"},
+     *    requirements={"id"="\d+"}
+     * )
+     */
+    public function savePost(int $id = 1)
+    {
+        $route = $this->generateUrl('app_blog_post', [
+            '_locale' => 'fr', 
+            'id' => 1,
+            '_format' => 'html',
+        ]);
+	// Génère une URL pour la route app_blog_post
+
+        // Lors de la génération d'une route avec _locale,
+        // il est possible de ne pas préciser de valeur, Symfony prendra
+        // alors la valeur actuelle de la requête. Comme on a également
+        // rendu id facultatif, on pourrait donc générer la route de cette manière 
+
+        $route = $this->generateUrl('app_blog_post', [
+            '_format' => 'html',
+        ]);
+    }
+
+    // ...
+}
+
+OU 
+
+<?php
+
+namespace App\Service;
+
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
+
+class Service
+{
+    private $router;
+
+    public function __construct(UrlGeneratorInterface $router)
+    {
+        $this->router = $router;
+    }
+
+    public function getUrl()
+    {
+        $route = $this->generate('app_blog_post', [
+            '_locale' => 'fr', 
+            'id' => 1,
+            '_format' => 'html',
+        ]);
+    }
+}
+
+
+OU 
+
+dans le twig 
+
+<a href="{{ path('app_blog_post', {'_locale': 'fr', 'id': 1, '_format': 'html'}) }}">Voir le message</a>
+
+méthode path
+
+méthode url chemin absolu 
+<a href="{{ url('app_blog_post', {'_locale': 'fr', 'id': 1, '_format': 'html'}) }}">Voir le message</a>
+
+
+Exercice: Modifiez la page d'accueil pour qu'elle affiche l'URL menant aux articles que John a écrit en 2015.
+
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
+
+class BlogController extends AbstractController
+{
+    /**
+     * @Route("/", name="blog_index")
+     */
+    public function index()
+    {
+        $url = $this->generateUrl('blog_posts_users_date', [
+            'user' => 'john', 
+            'year' => 2015,
+        ]);
+
+        return new Response(
+            '<html><body>'.$url.'</body></html>'
+        );
+    }
+
+    /**
+     * @Route("/posts", name="blog_posts")
+     */
+    public function posts()
+    {
+	      return new Response(
+            '<html><body>Liste des articles</body></html>'
+        );
+    }
+
+
+    /**
+     * @Route(
+     *    "/posts/{user}/{year}",
+     *    name="blog_posts_users_date"
+     *    methods={"GET"}),
+     *    requirements={"year"="^\d{4}$"}
+     * }
+     */
+    public function postsFromUserAndYear(string $user, int $year = 2020)
+    {
+	      return new Response(
+            '<html><body>'.$user.' '.$year.'</body></html>'
+        );
+    }
+}
