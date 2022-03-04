@@ -1,0 +1,55 @@
+<?php
+
+// Les Request
+
+// mettre  use Symfony\Component\HttpFoundation\Request;
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class BasicController extends AbstractController
+{
+    /**
+     * @Route("/request")
+     */
+    public function requestExemple(Request $request): Response
+    {
+        // Récupère toutes les données présentes dans la query (=objet)sous forme d'array
+        $request->query->all();
+        var_dump($request->query->all());
+        // Récupère la donnée de la query à la clé fournie  (souvent l'id qui est aussi dans l'URL)
+        $request->query->get('key');
+        //var_dump($request->query->getInt('id'));
+
+        // Récupère toutes les données présentes en POST sous forme d'array
+        $request->request->all();
+        // Récupère la donnée POST à la clé fournie
+        $request->request->get('key');
+
+        // Récupère toutes les données présentes dans SERVER sous forme d'array
+        $request->server->all();
+        // Récupère la donnée SERVER à la clé fournie
+        $request->server->get('key');
+        var_dump($request->server->all());
+
+        // Récupère toutes les données présentes dans le header sous forme d'array
+        $request->headers->all();
+        // Récupère la donnée header à la clé fournie
+        $request->headers->get('key');
+        var_dump($request->headers->get('key'));
+
+        // Récupère toutes les données de type UploadedFile sous forme d'array
+        $request->files->all();
+        // Récupère l'uploadedFile à la clé fournie
+        $request->files->get('key');
+
+        // Retourne un booléen qui identifie s'il s'agit d'une requête Ajax
+        $request->isXmlHttpRequest();
+
+        return new Response('');
+    }
+}

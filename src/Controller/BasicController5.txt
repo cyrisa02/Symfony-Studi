@@ -1,0 +1,20 @@
+<?php
+// renvoie des fichier en binaire
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\Routing\Annotation\Route;
+
+class BasicController5 extends AbstractController
+{
+    /**
+     * @Route("/file-response")
+     */
+    public function fileResponse(): BinaryFileResponse
+    {
+        $fileContent = file_get_contents('/path/to/file.exe');
+
+        return new BinaryFileResponse($fileContent);
+    }
+}

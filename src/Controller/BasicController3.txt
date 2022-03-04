@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class BasicController3 extends AbstractController
+{
+    /**
+     * @Route("/response1")
+     */
+    public function response(): Response
+    {
+        // À la création de l'objet, il est possible de fournir un contenu, un code de statut HTTP ainsi qu'un tableau de headers
+        $response = new Response('contenu de la réponse', 200, []);
+        // 200 <=> HTTP_OK, comme 404 etc...
+        // Il est également possible de ne rien fournir à la création, ce qui renverrait une réponse vide
+        $response = new Response();
+        // Nous pouvons alors préciser des valeurs par la suite
+        $response->setContent('contenu de la réponse');
+        // L'objet Response possède une liste de constantes pour chaque statut HTTP
+        // Si on ne précise pas de StatusCode, 200 est la valeur par défaut
+        $response->setStatusCode(Response::HTTP_OK);
+        // Les  headers doivent être définis un à un en précisant la clé et la valeur
+        $response->headers->set('Content-type', 'text/html');
+
+        return $response;
+    }
+}

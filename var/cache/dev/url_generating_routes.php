@@ -4,6 +4,7 @@
 
 return [
     'app_avecservice_deactivateuser' => [['id'], ['_controller' => 'App\\Controller\\AvecServiceController::deactivateUser'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/deactivate']], [], [], []],
+    'app_basic_jsonresponse' => [[], ['_controller' => 'App\\Controller\\BasicController::jsonResponse'], [], [['text', '/json-response']], [], [], []],
     'blog_index' => [[], ['_controller' => 'App\\Controller\\BlogController::blog'], ['_locale' => 'fr|en'], [['text', '/blog/blog']], [], [], []],
     'blog_post' => [[], ['_controller' => 'App\\Controller\\BlogController::posts'], ['_locale' => 'fr|en'], [['text', '/blog/posts']], [], [], []],
     'app_blog_post' => [['id'], ['_controller' => 'App\\Controller\\BlogController::post'], ['_locale' => 'fr|en'], [['variable', '/', '[^/]++', 'id', true], ['text', '/blog/posts']], [], [], []],
@@ -16,6 +17,8 @@ return [
     'app_creeavecmake_anotherpage' => [[], ['_controller' => 'App\\Controller\\CreeAvecMakeController::anotherPage'], [], [['text', '/another-page']], [], [], []],
     'app_creeavecmake_message' => [['id'], ['_controller' => 'App\\Controller\\CreeAvecMakeController::message'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/message']], [], [], []],
     'app_creeavecmake_jsonexemple' => [[], ['_controller' => 'App\\Controller\\CreeAvecMakeController::jsonexemple'], [], [['text', '/json']], [], [], []],
+    'message_list' => [[], ['_controller' => 'App\\Controller\\MessageController::list'], [], [['text', '/messages']], [], [], []],
+    'message_item' => [['id'], ['_controller' => 'App\\Controller\\MessageController::item'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/messages']], [], [], []],
     'annotation' => [[], ['_controller' => 'App\\Controller\\NoRoutyamlController::annotation'], [], [['text', '/annotation']], [], [], []],
     'app_routingchallenge_sendresult' => [['id'], ['_controller' => 'App\\Controller\\RoutingChallengeController::sendResult'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/challenge/send-result']], [], [], []],
     'app_routingchallenge_getuseranswers' => [['username', '_format'], ['_controller' => 'App\\Controller\\RoutingChallengeController::getUserAnswers'], ['_format' => 'html|json'], [['variable', '/', 'html|json', '_format', true], ['variable', '/', '[^/]++', 'username', true], ['text', '/challenge/user-answers']], [], [], []],

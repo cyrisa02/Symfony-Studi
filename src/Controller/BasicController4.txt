@@ -1,0 +1,25 @@
+<?php
+
+//Problème de version?????
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class BasicController extends AbstractController
+{
+    /**
+     * @Route("/json-response")
+     */
+    public function jsonResponse(): JsonResponse
+    {
+        return new JsonResponse(['key' => 'value']);
+
+        // Équivalent à
+
+        return $this->json(['key' => 'value']);
+    }
+}
