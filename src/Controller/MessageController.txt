@@ -1,0 +1,49 @@
+<?php
+Ancien fichier
+//créez deux contrôleurs :
+
+//un pour lister les messages dont le nom sera list, retournant une réponse au format format JSON et dont l'URL sera /messages
+
+//un pour afficher un message par son index au format JSON (en prenant bien soin de vérifier que le message existe)
+
+namespace App\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+
+class MessageController extends AbstractController
+{
+    public const MESSAGES = ['Bonjour', 'Bonsoir', 'Au revoir'];
+
+    /**
+     * @Route("/messages", name="message_list)
+     */
+    public function list(): Response
+    {
+        $messages = [];
+
+        foreach (self::MESSAGES as $index => $message) {
+            $messages[] = [
+                'text' => $message,
+            ];
+        }
+
+        return $this->json($messages);
+    }
+
+    /**
+     * @Route("/messages/{id}", name="message_item")
+     */
+    public function item(int $id): Response
+    {
+        if (!isset(self::MESSAGES[$id])) {
+            throw $this->createNotFoundException('Le message n\'existe pas');
+        }
+
+        return $this->json(self::MESSAGES[$id]);
+    }
+
+    //pour item cela ressemble bcp la page 404 modifiée
+    // voir fichier CreeAvecMakeController.php
+}
